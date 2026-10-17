@@ -1,0 +1,91 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(20, 0, 20);
+  font-family: Verdana, Tahoma, sans-serif;
+  text-align: center;
+  color: white;
+}
+
+.app {
+  width: min(90%, 480px);
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+#label {
+  display: block;
+  font-size: 2rem;
+  box-shadow: 0px 0px 60px white;
+  margin-top: 2%;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  background-color: black;
+  border: none;
+  box-shadow: 2px 2px 20px black;
+  margin: 30px 0px 0px;
+  color: white;
+  border-radius: 7px;
+  font-size: 1.3rem;
+}
+
+.button {
+  margin-top: 16px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  color: white;
+  background-color: rgb(90, 20, 90);
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(120, 30, 120);
+}
+
+.plus {
+  font-weight: bold;
+}
+
+.list {
+  list-style: none;
+  margin-top: 24px;
+  text-align: left;
+}
+
+.list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 7px;
+}
+
+.list li .text {
+  flex: 1;
+  word-break: break-word;
+}
+
+.list li.done .text {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.delete {
+  background: none;
+  border: none;
+  color: #ff8a8a;
+  font-size: 1.2rem;
+  cursor: pointer;
+}

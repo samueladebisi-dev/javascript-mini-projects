@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    /* Night-sky gradient in place of the original background photo */
+    background-image: radial-gradient(circle at 75% 20%, #3a5a8c 0%, transparent 45%),
+        linear-gradient(160deg, #0b1026 0%, #1c2554 50%, #3b2a5a 100%);
+    background-position: center;  /*To keep the image in best fit*/
+    background-repeat: no-repeat;  /*To avoid the image repeating itself, mostly useful if the image is small  in size*/
+    background-size: cover;  /*allows image to cover the whole window and maintain its aspect ratio when the size of the device used is enlarged or reduced*/
+    background-attachment: fixed;    /*Useful when u want the background to stilll be there when u scroll down*/
+}
+
+.background-hover-curtain {
+       background-color: rgba(0, 0, 0, 0.4);
+}
+
+#clock-container {
+    /* To HORIZONTALLY align a text/item  */
+    display: flex;
+    justify-content: center;
+
+    /* To VERTICALLY align a text/item  */
+    align-items: center;
+    height: 100vh;
+}
+
+
+#blur {
+    backdrop-filter: blur(3px);    /*To blur d background*/
+    background-color: hsla(0, 0%, 100%, 0.103);
+    width: 100%;
+}
+
+/* Styling the text itself */
+#clock { 
+    font-size: 6.5rem;
+    font-weight: bold;
+    text-align: center;
+    font-family: monospace;
+    color: white;
+}
