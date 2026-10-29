@@ -84,3 +84,29 @@ button {
   color: #fff;
   font-size: 12px;
 }
+
+/* Phones: the 550px card no longer fits, so it becomes a full-width card in
+   the normal page flow. */
+@media (max-width: 640px) {
+  .wrapper {
+    position: static;
+    transform: none;
+    width: auto;
+    min-width: 0;
+    padding: 16px;
+  }
+
+  .dimesions {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  input[type='text'] {
+    width: 70%;
+    margin-top: 30px;
+  }
+
+  button {
+    width: 24%;
+  }
+}

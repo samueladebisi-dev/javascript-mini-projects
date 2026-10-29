@@ -54,6 +54,7 @@ input {
 
 .range {
     width: 300px;
+    max-width: calc(100vw - 60px); /* container and margins on narrow phones */
     word-wrap: break-word;
     margin: 10px auto;
 }
@@ -61,6 +62,7 @@ input {
 .result {
     color: green;
     width: 300px;
+    max-width: calc(100vw - 60px);
     word-wrap: break-word;
     margin: 10px auto;
 }

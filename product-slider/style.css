@@ -312,3 +312,26 @@ button:hover {
   grid-column: span 2;
   margin-bottom: 10px;
 }
+
+/* Phones: the menu goes under the logo instead of squeezing beside it, and the
+   headline shrinks to fit. */
+@media (max-width: 600px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .navbar ul {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar ul li {
+    margin: 4px 8px;
+  }
+
+  .content h1 {
+    font-size: 40px;
+  }
+}

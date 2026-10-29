@@ -84,3 +84,15 @@
     font-weight: bold;
   }
   
+  /* Phones: the 400px card shrinks to the screen. */
+  @media (max-width: 440px) {
+    .container {
+      width: calc(100vw - 16px);
+    }
+    .draw-container div .player {
+      margin: 30px 12px;
+    }
+    button {
+      margin: 0 12px;
+    }
+  }

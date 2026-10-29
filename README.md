@@ -46,7 +46,7 @@ npm test
 
 `npm test` runs two scripts:
 
-- **Smoke test** (`tests/smoke.mjs`): opens the gallery and every app, and fails on uncaught errors, console errors, or a reference to a local file that doesn't exist. Failures of external resources (fonts, CDNs, the posts API) are listed but don't fail the run, so it also works offline. It also checks that the gallery links to every app.
+- **Smoke test** (`tests/smoke.mjs`): opens the gallery and every app, and fails on uncaught errors, console errors, a reference to a local file that doesn't exist, or a page that scrolls sideways on a 390px or 320px wide phone screen. Failures of external resources (fonts, CDNs, the posts API) are listed but don't fail the run, so it also works offline. It also checks that the gallery links to every app.
 - **Interaction checks** (`tests/interactions.mjs`): use the apps the way a person would and check the result. Examples: Guess the Number is played to the end with a binary search, Bill Split's totals are checked, Infinite Scroll is fed stubbed posts and a failing API, and the To-do List is checked across a page reload.
 
 To run either one for selected apps:
@@ -69,6 +69,7 @@ The apps began as earlier small exercises. This version reworks them into a test
   - Password Validation now updates on paste and autofill.
   - Product Slider still scrolls by the right amount after a window resize.
   - Bill Split, Blobmaker, Multi Typing and Infinite Scroll referenced files that weren't there.
+- **Phone layouts.** Eight apps were wider than a phone screen (up to 556px on a 390px phone). Bill Split, Copy to Clipboard and String Transformers had full-width fields whose padding pushed them past the edge; Blobmaker, Dice Game and Guess the Number had fixed widths; Digital Clock's time was too large; Product Slider's menu squeezed beside the logo. Each now fits at 390px and 320px.
 - **Modern APIs.** The copy buttons use the Clipboard API instead of the deprecated `document.execCommand('copy')`.
 - **Finished app.** The To-do List had markup but an empty script. It now adds, completes and deletes tasks and keeps them in `localStorage`.
 - **Images.** Photos with no known source were removed. Product Slider now uses SVG placeholders and a CSS gradient banner, and Digital Clock uses a CSS gradient background.

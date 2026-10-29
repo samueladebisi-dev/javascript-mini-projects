@@ -60,6 +60,9 @@ async function galleryMismatches(apps) {
   ];
 }
 
+// Common phone widths: a mid-size phone and the narrowest still in use.
+const PHONE_WIDTHS = [390, 320];
+
 async function check(browser, base, app) {
   // A fresh context per app, so a cached 404 (e.g. a shared favicon) can't hide
   // a missing file in a later app.
@@ -87,6 +90,14 @@ async function check(browser, base, app) {
 
   await page.goto(`${base}${appPath(app)}`, { waitUntil: 'load' });
   await page.waitForTimeout(1000);
+
+  // Phone widths: the page must fit without sideways scrolling.
+  for (const width of PHONE_WIDTHS) {
+    await page.setViewportSize({ width, height: 800 });
+    await page.waitForTimeout(200);
+    const scrollWidth = await page.evaluate(() => document.documentElement.scrollWidth);
+    if (scrollWidth > width) errors.push(`${scrollWidth}px wide on a ${width}px screen (sideways scrolling)`);
+  }
   await context.close();
   return { app, errors, external };
 }

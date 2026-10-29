@@ -17,6 +17,7 @@ body {
 }
 
 textarea {
+    box-sizing: border-box; /* keeps width: 100% inside the card */
     width: 100%;
     margin-bottom: 10px;
     padding: 10px;
